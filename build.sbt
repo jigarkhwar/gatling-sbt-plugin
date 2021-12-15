@@ -1,5 +1,4 @@
-enablePlugins(SbtPlugin)
-enablePlugins(GatlingOssPlugin)
+enablePlugins(BuildInfoPlugin, SbtPlugin, GatlingOssPlugin)
 
 name := "gatling-sbt"
 scalaVersion := "2.12.15"
@@ -36,3 +35,6 @@ gatlingDevelopers := Seq(
     true
   )
 )
+
+buildInfoKeys := Seq[BuildInfoKey](name, version)
+buildInfoPackage := "io.gatling.sbt"
